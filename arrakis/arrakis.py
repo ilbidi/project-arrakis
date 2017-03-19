@@ -1,14 +1,15 @@
-# Main program. Per ora non fa nulla se non caricare il sistema di logging
-import sys
-import logconfig
+# Funzioni di utilita' per project-arrakis
 
-# Get logger
-logger = logconfig.logging.getLogger(__name__)
+def parseInput(input, delimiter='|'):
+    """Parsing dell'input dalla lettura sensori"""
+    return input.split(delimiter)
 
-def main():
-    logger.info('Main started')
-    logger.info('Main ended')
-
-if __name__=='__main__':
-    main()
-    
+def dictInput(input, delimiter='|'):
+    tokens = parseInput(input, delimiter)
+    dataRead = dict()
+    dataRead['device']=tokens[0]
+    dataRead['deviceType']=tokens[1]
+    dataRead['sensor']=tokens[2]
+    dataRead['sensorType']=tokens[3]
+    dataRead['value']=tokens[4]
+    return dataRead

@@ -1,0 +1,20 @@
+* ARRAKIS
+** Intro
+Primi passi su progetto arrakis
+si tratta di riuscire a inserire una lettura in arrivo
+sul server nella base dati
+** Device message
+La struttura del messaggio in arrivo da un dispositivo 
+è la seguente
+| campo       | tipo | max lung | note               |
+|-------------+------+----------+--------------------|
+| Device      | Str  |        8 | codice dispositivo |
+| Device Type | Str  |        2 | Tipo dispositivo   |
+| Sensor      | Str  |        8 | Cod sensore        |
+| Value       | Int  |        4 | Valore lettura     |
+|             |      |          |                    |
+questo significa che la lunghezza del messaggio trasmesso 
+deve essere almeno 25 caratteri, trasmettiamone 32
+ad esempio:
+AABBCCDD|00|99AABBCC|1234
+
