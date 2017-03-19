@@ -5,7 +5,13 @@ def parseInput(input, delimiter='|'):
     return input.split(delimiter)
 
 def dictInput(input, delimiter='|'):
+    if( not input ):
+        return None
     tokens = parseInput(input, delimiter)
+    if( not tokens ):
+        return None
+    if( len(tokens) != 5):
+        return None
     dataRead = dict()
     dataRead['device']=tokens[0]
     dataRead['deviceType']=tokens[1]

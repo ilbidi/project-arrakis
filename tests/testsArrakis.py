@@ -30,3 +30,15 @@ class TestArrakis(unittest.TestCase):
         self.assertEquals(data['sensor'], '99AABBCC')
         self.assertEquals(data['sensorType'], '00')
         self.assertEquals(data['value'], '1234')
+
+        # Check errors in list
+        data = arrakis.dictInput(input=None)
+        self.assertFalse(data)
+        data = arrakis.dictInput(input='')
+        self.assertFalse(data)
+        data = arrakis.dictInput(input='AABBCCDD|00|99AABBCC|00')
+        self.assertFalse(data)
+        data = arrakis.dictInput(input='AABBCCDD|00|99AABBCC|00|1234')
+        self.assertTrue(data)
+        data = arrakis.dictInput(input='AABBCCDD|00|99AABBCC|00|1234|FAIL')
+        self.assertFalse(data)
