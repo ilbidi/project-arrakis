@@ -92,8 +92,8 @@ class Device(Base):
 
     # Show content
     def __repr__(self):
-        return '<Device(''code''=%s, ''description''=%s, ''device type''=%s)>' % \
-            (self.code, self.description, self.deviceType)
+        return '<Device(''code''=%s, ''description''=%s, ''device type''=%s, ''sensors''=%s)>' % \
+            (self.code, self.description, self.deviceType, self.sensors)
 
     # Check equals
     def __eq__(self, other):
@@ -139,14 +139,19 @@ class DeviceData(Base):
     # Device (many to one)
     device_id = Column(Integer, ForeignKey('device.id'))
     device = relationship("Device")
+    # Sensor (many to one)
+    sensor_id = Column(Integer, ForeignKey('sensor.id'))
+    sensor = relationship("Sensor")
 
     # Data read from a device
     value = Column(Float)
 
     # Show content
     def __repr__(self):
-        return '<DeviceData(''value''=%f ''DateTimeRead''=%s' % \
-            (self.value, \
+        return '<DeviceData(''device''=%s, ''Sensor''=%s, ''value''=%f ''DateTimeRead''=%s' % \
+            (self.device,\
+             self.sensor,\
+             self.value, \
              self.datetimeRead.strftime('%Y-%m-%d %H:%M:%S' ) \
              if self.datetimeRead is not None else '0000-00-00 00:00:00')
 

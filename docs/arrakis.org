@@ -17,4 +17,8 @@ questo significa che la lunghezza del messaggio trasmesso
 deve essere almeno 25 caratteri, trasmettiamone 32
 ad esempio:
 AABBCCDD|00|99AABBCC|1234
-
+** Vari errori
+*** TODO multidatabase in test
+Non si riesce a usare più database in test, sembra che 
+definita una volta il bind sulla sessione del modulo arrakis
+non sia più possibile cambiarla
