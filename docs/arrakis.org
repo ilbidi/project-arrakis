@@ -28,9 +28,25 @@ Risolto, il problema era mettere nella tearup il bind
 ald db altrimenti in fase di apertura modulo tute le classi
 venivano create cosi come le variabili tenendo solo l'ultimo 
 db associato
-*** TODO Creare virtual enviroment python
-*** TODO Testare su rPI
-*** TODO Portare modulo comunicazione NRF in progetto
-*** TODO Testare modulo comunicazione
+*** DONE Creare virtual enviroment python
+Creato con instruzione virtualenv venv
+Installato librerie di utilità, da file requiements.txt
+*** DONE Testare su rPI
+Tutti i test passati
+*** DONE Portare modulo comunicazione NRF in progetto
+portato modulo nrf24 e, come esempio, rapberryfriends.py
+*** DONE Testare modulo comunicazione
+funziona correttamente con questi 2 files
+*** TODO Documentare come installare i moduli python di comunicazione
 *** TODO Modificare modulo comunicazione per scrivere su DB (MySql per comodità)
+La cosa è più complicata del previsto.
+Il programma può essere eseguito solo come super user per avere l'accesso al 
+GPIO. Ma lanciando sudo python .... non funziona in quanto utilizza l'interprete 
+di sistema e non quello dell'ambiente virtuale, per cui non trova le librerie di accesso 
+al DB, ad esempio. Non voglio installare tutto sull'abiente python principale in mod da avere
+un minimo di controllo sulle librerie.
+Viceversa richiamando da sudo l'interprete dell'ambainte virtuale 
+sudo ./venv/bin/python ... ho si l'accesso alle librerie installate 
+ma non più alle librerie GPIO, installate solo sull'ambiante di sistema.
+**** TODO verificare come installare il GPIO sull'ambinte virtuale
 
