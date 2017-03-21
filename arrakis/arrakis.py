@@ -8,7 +8,7 @@ from models.models import Base, SensorType, Sensor, DeviceType, Device, DeviceDa
 
 # Base dati
 Session = sessionmaker()
-session = Session()
+session = None
 
 # Funzioni
 def parseInput(input, delimiter='|'):
