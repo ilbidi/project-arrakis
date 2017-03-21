@@ -11,13 +11,15 @@ La struttura del messaggio in arrivo da un dispositivo
 | Device      | Str  |        8 | codice dispositivo |
 | Device Type | Str  |        2 | Tipo dispositivo   |
 | Sensor      | Str  |        8 | Cod sensore        |
+| Sensor Type | Str  |        2 | Tipo Sensore       |
 | Value       | Int  |        4 | Valore lettura     |
-|             |      |          |                    |
 questo significa che la lunghezza del messaggio trasmesso 
 deve essere almeno 25 caratteri, trasmettiamone 32
 ad esempio:
-AABBCCDD|00|99AABBCC|1234
-** Vari errori
+AABBCCDD|00|99AABBCC|00|1234
+Per convenzione i sensori avranno codici che iniziano per 99 i dispositivi non inizieranno mai per 
+99 
+** Attività
 *** DONE multidatabase in test
 Non si riesce a usare più database in test, sembra che 
 definita una volta il bind sulla sessione del modulo arrakis
@@ -26,3 +28,9 @@ Risolto, il problema era mettere nella tearup il bind
 ald db altrimenti in fase di apertura modulo tute le classi
 venivano create cosi come le variabili tenendo solo l'ultimo 
 db associato
+*** TODO Creare virtual enviroment python
+*** TODO Testare su rPI
+*** TODO Portare modulo comunicazione NRF in progetto
+*** TODO Testare modulo comunicazione
+*** TODO Modificare modulo comunicazione per scrivere su DB (MySql per comodità)
+
