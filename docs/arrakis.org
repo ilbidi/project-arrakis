@@ -25,4 +25,4 @@ non sia più possibile cambiarla
 Risolto, il problema era mettere nella tearup il bind
 ald db altrimenti in fase di apertura modulo tute le classi
 venivano create cosi come le variabili tenendo solo l'ultimo 
-db associato
+db 
