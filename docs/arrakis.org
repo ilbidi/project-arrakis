@@ -36,7 +36,7 @@ Tutti i test passati
 *** DONE Portare modulo comunicazione NRF in progetto
 portato modulo nrf24 e, come esempio, rapberryfriends.py
 *** DONE Testare modulo comunicazione
-funziona correttamente con questi 2 files
+    funziona correttamente con questi 2 files
 *** TODO Documentare come installare i moduli python di comunicazione
 *** TODO Modificare modulo comunicazione per scrivere su DB (MySql per comodità)
 La cosa è più complicata del previsto.
@@ -49,4 +49,3 @@ Viceversa richiamando da sudo l'interprete dell'ambainte virtuale
 sudo ./venv/bin/python ... ho si l'accesso alle librerie installate 
 ma non più alle librerie GPIO, installate solo sull'ambiante di sistema.
 **** TODO verificare come installare il GPIO sull'ambinte virtuale
-
