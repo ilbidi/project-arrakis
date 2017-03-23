@@ -51,7 +51,7 @@ def main():
     logger.info('Main started. Enter listening sycle')
     while True:
         logger.debug('Listening cycle')
-        time.sleep(300)
+        time.sleep(2)
         pipe = [0]
         while not radio.available(pipe, True):
             time.sleep(1000/1000000.0)
